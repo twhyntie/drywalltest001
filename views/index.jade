@@ -5,6 +5,7 @@ block head
 
 block neck
   link(rel='stylesheet', href='/views/index.min.css?#{cacheBreaker}')
+  link(rel='stylesheet', href='vendor/joyride/joyride-2.1.css')
 
 block body
   div.jumbotron
@@ -35,3 +36,21 @@ block body
           h3 Contact Us
           p At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti.
           a.btn.btn-default.btn-block(href='/contact/') Learn More
+
+block feet
+  ol#joyRideTipContent
+    li(data-button='Get started!')
+      h1 Welcome!
+      p This is a test implementation of Drywall using Joyride for feature tours.
+  script(src='vendor/joyride/jquery-1.10.1.js')
+  script(src='vendor/joyride/jquery.cookie.js')
+  script(src='vendor/joyride/modernizr.mq.js')
+  script(src='vendor/joyride/jquery.joyride-2.1.js')
+  script.
+    $( document ).ready(function() {
+      $('#joyRideTipContent').joyride({
+        autoStart:true,
+        modal:true,
+        expose:true
+      });
+    });
